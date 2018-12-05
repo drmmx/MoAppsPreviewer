@@ -77,6 +77,8 @@ public class SignInActivity extends AppCompatActivity {
                     Intent intent = new Intent(SignInActivity.this, PreviewActivity.class);
                     intent.putExtra(Constants.TOKEN_RESPONSE, response.body().getData());
                     startActivity(intent);
+                } else {
+                    Toast.makeText(SignInActivity.this, "Ваш аккаунт не найден", Toast.LENGTH_SHORT).show();
                 }
                 progressBar.setVisibility(View.GONE);
             }
